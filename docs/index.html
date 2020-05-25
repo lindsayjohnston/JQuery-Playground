@@ -8,7 +8,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
         $(document).ready(function(){
-            $("#reset-btn").click(function(){
+            $(".reset-btn").click(function(){
                 location.reload();
             });
             $("#hide-btn").click(function(){
@@ -17,6 +17,12 @@
             $("#show-btn").click(function(){
                 $("#show-changling").removeClass("hidden");
             });
+            $(".fade-in-btn").click(function(){
+                $("#fade-in-changling").fadeIn();
+            });
+            $("#animate-btn").mouseenter(function(){
+                $("#animate-changling").animate({left: '30px'});
+            })
         });
     </script>
     
@@ -29,10 +35,10 @@
         <nav>
             <ul>
                 <li>
-                    <a href="#animation">Animation</a>
+                    <a href="#click-section">Click Function</a>
                 </li>
                 <li>
-                    <a href="#">Other Section</a>
+                    <a href="#hover-section">Other Section</a>
                 </li>
                 <li>
                     <a href="#">Other Section</a>
@@ -45,14 +51,16 @@
             <h1>jQuery Playground</h1>
         </header>
     </div>
-    <!-- ANIMATIONS -->
-    <div id="animation" class="big-section">
-        <section>
+    <!-- CLICK FUNCTION -->
+    <div id="click-section" class="big-section">
             <header class="section-header">
-                <h2>Animations</h2>
-                <button id="reset-btn">Reset Animations</button>
+                <h2>Click Function</h2>
+                <button class="reset-btn">Reset</button>
             </header>
+
             <div class="examples">
+
+         <!-- CLICK AND HIDE START ------------------------------------------>
                 <div class="example">
                     <div class="changling-cell">
                         <div class="changling" id="hide-changling"></div>
@@ -61,7 +69,7 @@
                         <button id="hide-btn">This button hides the box!</button>
                     </div>
                     <div class="description-cell">
-                        <p>The button has an id of "hide-btn" and the pink box is a div with an id of #hide-changling. You can hide the box with this code:</p>
+                        <p>The button has an id of "hide-btn" and the pink box is a div with an id of #hide-changling. Here is the jQuery code:</p>
                     </div>
                     <div class="code-snippet-cell">
                         <figure>
@@ -80,7 +88,8 @@
                     </div>
 
                 </div>
-                
+
+        <!-- CLICK AND SHOW START---------------------------------------->    
                 <div class="example">
                     <div class="changling-cell">
                         <div class="changling hidden" id="show-changling"></div>
@@ -89,7 +98,7 @@
                         <button id="show-btn">This button shows a box!</button>
                     </div>
                     <div class="description-cell">
-                        <p>The button has an id of "show-btn" and the green box is a div with an id of #show-changling. You can show the box with this code:</p>
+                        <p>The button has an id of "show-btn" and the green box is a div with an id of #show-changling. The #show-changling div has a class of .hidden{ display: none}. When you click the button, jQuery removes the .hidden class from the div. Here is the jQuery code:</p>
                     </div>
                     <div class="code-snippet-cell">
                         <figure>
@@ -108,20 +117,107 @@
                     </div>
 
                 </div>
-
-
+        
+        <!-- CLICK AND FADE IN START --------------------------------------->
+                <div class="example">
+            <div class="changling-cell">
+                <div class="changling hidden" id="fade-in-changling"></div>
             </div>
+            <div class="button-cell">
+                <button class="fade-in-btn">This button makes a box fade in!</button>
+            </div>
+            <div class="description-cell">
+                <p>The button has an class of "fade-in-btn."  When you click this button, jQuery makes a div with the id of #fade-in-changling fade in. We accomplish this with the following code:</p>
+            </div>
+            <div class="code-snippet-cell">
+                <figure>
+                    <pre>
+                        <code contenteditable spellcheck="false">
+&lt;script&gt;
+    $(document).ready(function(){
+        $(".reset-btn").click(function(){
+            location.reload();
+        });
+    });
+&lt;/script&gt;
+                        </code>
+                    </pre>
+                </figure>
+            </div>
+
+                </div>
+
+        <!-- CLICK AND RELOAD START ------------------------------------------>
+                <div class="example">
+            <div class="changling-cell">
+                <div class="changling"></div>
+            </div>
+            <div class="button-cell">
+                <button class="reset-btn">This button reloads the page!</button>
+            </div>
+            <div class="description-cell">
+                <p>The button has an class of "reset-btn" just like the button at the top of this section that says "Reset." When you click either of these buttons jQuery reloads the page. We accomplish this with the following code:</p>
+            </div>
+            <div class="code-snippet-cell">
+                <figure>
+                    <pre>
+                        <code contenteditable spellcheck="false">
+&lt;script&gt;
+    $(document).ready(function(){
+        $(".reset-btn").click(function(){
+            location.reload();
+        });
+    });
+&lt;/script&gt;
+                        </code>
+                    </pre>
+                </figure>
+            </div>
+
+                </div>
+
+             </div>
             
-            
+    </div> <!--END CLICK SECTION-->
 
+    <!-- HOVER SECTION -->
+    <div id="hover-section" class="bigsection">
+        <header class="section-header">
+            <h2>Hover Function</h2>
+            <button class="reset-btn">Reset</button>
+        </header>
+        <div class="examples">
+        <!-- HOVER AND ANIMATE --------------------------------------------->
+                <div class="example">
+                    <div class="changling-cell">
+                        <div class="changling" id="animate-changling"></div>
+                    </div>
+                    <div class="button-cell">
+                        <button id="animate-btn"> Hover over this button to animate the box!</button>
+                    </div>
+                    <div class="description-cell">
+                        <p>The button has an id of "animate-btn" and the pink box is a div with an id of #aniimate-changling. Here is the jQuery code used to animate it:</p>
+                    </div>
+                    <div class="code-snippet-cell">
+                        <figure>
+                            <pre>
+                                <code contenteditable spellcheck="false">
+&lt;script&gt;
+    $(document).ready(function(){
+        $("#hide-btn").click(function(){
+            $("#hide-changling").hide();
+        });
+    });
+&lt;/script&gt;
+                                </code>
+                            </pre>
+                        </figure>
+                    </div>
 
-        </section>
-        
+                </div>
+        </div>
+    </div> <!--END HOVER SECTION-->
 
-    
-        
-
-    </div>
     
     
 </body>

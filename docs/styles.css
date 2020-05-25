@@ -6,16 +6,21 @@
 header{
     text-align: center;
 }
-code{
-    
-}
 
 pre{
-    display: flex;
-    justify-content: center;
+    /* display: flex; */
+    /* justify-content: center; */
     margin: 0;
+    width: 500px;
 }
-
+code{
+    width: 500px;
+    display: flex;
+    align-items: center;
+}
+/* code #text{
+    width: 500px;
+} */
 figure{
     margin: 0;
 }
@@ -33,10 +38,6 @@ figure{
     align-items: center;
 }
 
-.description{
-    
-}
-
 .changling-cell{
     height: 80px;
     width: 80px;
@@ -45,7 +46,10 @@ figure{
 
 .button-cell{
     background-color: lightblue;
-    padding: 20px;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .description-cell{
@@ -68,5 +72,17 @@ figure{
     background-color: green;
     height: 60px;
     width: 60px;
-    
+}
+
+#fade-in-changling{
+    background-color:blueviolet;
+    height: 60px;
+    width: 60px;
+}
+
+#animate-changling{
+    background-color:orange;
+    position: absolute;
+    height: 60px;
+    width: 60px;
 }
