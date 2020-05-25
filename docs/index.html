@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>jQuery Playground</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#reset-btn").click(function(){
+                location.reload();
+            });
+            $("#hide-btn").click(function(){
+                $("#hide-changling").hide();
+            });
+            $("#show-btn").click(function(){
+                $("#show-changling").removeClass("hidden");
+            });
+        });
+    </script>
+    
+</head>
+
+
+
+<body>
+    <div id="nav-div">
+        <nav>
+            <ul>
+                <li>
+                    <a href="#animation">Animation</a>
+                </li>
+                <li>
+                    <a href="#">Other Section</a>
+                </li>
+                <li>
+                    <a href="#">Other Section</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div id="header-div">
+        <header>
+            <h1>jQuery Playground</h1>
+        </header>
+    </div>
+    <!-- ANIMATIONS -->
+    <div id="animation" class="big-section">
+        <section>
+            <header class="section-header">
+                <h2>Animations</h2>
+                <button id="reset-btn">Reset Animations</button>
+            </header>
+            <div class="examples">
+                <div class="example">
+                    <div class="changling-cell">
+                        <div class="changling" id="hide-changling"></div>
+                    </div>
+                    <div class="button-cell">
+                        <button id="hide-btn">This button hides the box!</button>
+                    </div>
+                    <div class="description-cell">
+                        <p>The button has an id of "hide-btn" and the pink box is a div with an id of #hide-changling. You can hide the box with this code:</p>
+                    </div>
+                    <div class="code-snippet-cell">
+                        <figure>
+                            <pre>
+                                <code contenteditable spellcheck="false">
+&lt;script&gt;
+    $(document).ready(function(){
+        $("#hide-btn").click(function(){
+            $("#hide-changling").hide();
+        });
+    });
+&lt;/script&gt;
+                                </code>
+                            </pre>
+                        </figure>
+                    </div>
+
+                </div>
+                
+                <div class="example">
+                    <div class="changling-cell">
+                        <div class="changling hidden" id="show-changling"></div>
+                    </div>
+                    <div class="button-cell">
+                        <button id="show-btn">This button shows a box!</button>
+                    </div>
+                    <div class="description-cell">
+                        <p>The button has an id of "show-btn" and the green box is a div with an id of #show-changling. You can show the box with this code:</p>
+                    </div>
+                    <div class="code-snippet-cell">
+                        <figure>
+                            <pre>
+                                <code contenteditable spellcheck="false">
+&lt;script&gt;
+    $(document).ready(function(){
+        $("#show-btn").click(function(){
+            $("#show-changling").removeClass("hidden");
+        });
+    });
+&lt;/script&gt;
+                                </code>
+                            </pre>
+                        </figure>
+                    </div>
+
+                </div>
+
+
+            </div>
+            
+            
+
+
+        </section>
+        
+
+    
+        
+
+    </div>
+    
+    
+</body>
+</html>

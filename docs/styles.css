@@ -1,0 +1,72 @@
+*{
+    box-sizing: border-box;
+}
+
+/* GENERAL FORMATTING */
+header{
+    text-align: center;
+}
+code{
+    
+}
+
+pre{
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+
+figure{
+    margin: 0;
+}
+
+.hidden{
+    display: none;
+}
+
+/* ANIMATIONS "TABLE" */
+.example{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.description{
+    
+}
+
+.changling-cell{
+    height: 80px;
+    width: 80px;
+    background-color: lightblue;
+}
+
+.button-cell{
+    background-color: lightblue;
+    padding: 20px;
+}
+
+.description-cell{
+    width: 300px;
+    background-color: lightblue;
+}
+
+.code-snippet-cell{
+    width: 500px;
+    background-color: lightblue;
+}
+
+#hide-changling{
+    background-color: hotpink;
+    height: 60px;
+    width: 60px;
+}
+
+#show-changling{
+    background-color: green;
+    height: 60px;
+    width: 60px;
+    
+}
