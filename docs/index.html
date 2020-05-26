@@ -32,6 +32,19 @@
             $("#animate-font-size-btn").mouseenter(function(){
                 $("#animate-font-size-changling").animate({fontSize: '3em'}, "slow");
             });
+            $("#dblclick-slide-btn").dblclick(function(){
+                $("#dblclick-slide-changling").slideDown("slow");
+            });
+            $("#dblclick-slidetoggle-btn").dblclick(function(){
+                $("#dblclick-slidetoggle-changling").slideToggle();
+            });
+            $("#dblclick-down-right-btn").dblclick(function(){
+                $("#dblclick-down-right-changling").animate({right:"300px"})
+                $("#dblclick-down-right-changling").animate({left: "20px"});
+            })
+            $("#dblclick-chain-btn").dblclick(function(){
+                $("#dblclick-chain-changling").css("backgroundColor", "red").slideUp(300).slideDown(300).fadeOut(2000);
+            })
         });
     </script>
     
@@ -45,13 +58,13 @@
         <nav>
             <ul>
                 <li>
-                    <a href="#click-section">Click Function</a>
+                    <a href="#click-section">click Method</a>
                 </li>
                 <li>
-                    <a href="#mouseenter-section">Mouseenter</a>
+                    <a href="#mouseenter-section">mouseenter Method</a>
                 </li>
                 <li>
-                    <a href="#">Other Section</a>
+                    <a href="#dblclick-section">dblclick Method</a>
                 </li>
             </ul>
         </nav>
@@ -286,15 +299,153 @@ $(document).ready(function(){
     </div> <!--END HOVER SECTION-->
 
     <!-- DBLCLICK SECTION -->
-    <div id="dbl-click-section" class="bigsection">
+    <div id="dblclick-section" class="bigsection">
         <header class="section-header">
             <h2>dblclick() Method</h2>
             <button class="reset-btn">Reset</button>
         </header>
         <div class="examples">
             <!-- DBLCLICK AND SLIDE-->
+            <div class="example">
+                <div class="changling-cell">
+                    <div class="changling changling-bar">This Could Be a Menu</div>
+                    <div id="dblclick-slide-changling">
+                        <ul>
+                            <li>Item 1</li>
+                            <li>Item 2</li>
+                            <li>Item 3</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="button-cell">
+                    <button id="dblclick-slide-btn"> Double-click this button to see a menu slide into view!</button>
+                </div>
+                <div class="description-cell">
+                    <p>The button has an id of "#dblclick-slide-btn" and the list if items is in a div with an id of #dblclick-slide-changling. Here is the jQuery code used to make it slide down:</p>
+                </div>
+                <div class="code-snippet-cell">
+                    <figure>
+                        <pre>
+                            <code contenteditable spellcheck="false" class="language-css">
+&lt;script&gt;
+$(document).ready(function(){
+    $("#dblclick-slide-btn").dblclick(function(){
+        $("#dblclick-slide-changling").slideDown("slow");
+    })
+});
+&lt;/script&gt;
+                            </code>
+                        </pre>
+                    </figure>
+                </div>
+
+            </div>
         </div>
     </div>
+    <!-- DBLCLICK AND SLIDETOGGLE-->
+    <div class="example">
+        <div class="changling-cell">
+            <div class="changling changling-bar">Menu</div>
+            <div id="dblclick-slidetoggle-changling">
+                <ul>
+                    <li>Item 1</li>
+                    <li>Item 2</li>
+                    <li>Item 3</li>
+                </ul>
+            </div>
+        </div>
+        <div class="button-cell">
+            <button id="dblclick-slidetoggle-btn"> Double-click this button to slide or hide the menu!</button>
+        </div>
+        <div class="description-cell">
+            <p>The button has an id of "#dblclick-slidetoggle-btn" and the list if items is in a div with an id of #dblclick-slidetoggle-changling. Here is the jQuery code used to make it slide down and up:</p>
+        </div>
+        <div class="code-snippet-cell">
+            <figure>
+                <pre>
+                    <code contenteditable spellcheck="false" class="language-css">
+&lt;script&gt;
+   $(document).ready(function(){
+      $("#dblclick-slidetoggle-btn").dblclick(function(){
+         $("#dblclick-slidetoggle-changling").slidetoggle();
+      })
+   });
+&lt;/script&gt;
+                    </code>
+                </pre>
+            </figure>
+        </div>
+
+    </div>
+            <!-- DBLCLICK AND DOUBLE ANIMATE-->
+            <div class="example">
+                <div class="changling-cell">
+                    <div class="changling changling-bar">This Could Be a Menu</div>
+                    <div id="dblclick-down-right-changling">
+                        <ul>
+                            <li>Item 1</li>
+                            <li>Item 2</li>
+                            <li>Item 3</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="button-cell">
+                    <button id="dblclick-down-right-btn"> Double-click this button to see a menu slide down and to the right!</button>
+                </div>
+                <div class="description-cell">
+                    <p>The button has an id of "#dblclick-slide-btn" and the list if items is in a div with an id of #dblclick-slide-changling. Here is the jQuery code used to make it slide down:</p>
+                </div>
+                <div class="code-snippet-cell">
+                    <figure>
+                        <pre>
+                            <code contenteditable spellcheck="false" class="language-css">
+&lt;script&gt;
+$(document).ready(function(){
+    $("#dblclick-slide-btn").dblclick(function(){
+        $("#dblclick-slide-changling").slideDown("slow");
+    })
+});
+&lt;/script&gt;
+                            </code>
+                        </pre>
+                    </figure>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- END EXAMPLE -->
+    <!-- DBLCLICK METHOD CHAINING -->
+    <div class="example">
+        <div class="changling-cell">
+            <div class="changling"  id="dblclick-chain-changling"></div>
+        </div>
+        <div class="button-cell">
+            <button id="dblclick-chain-btn"> Double-click this button to see multiple things happen to the square!</button>
+        </div>
+        <div class="description-cell">
+            <p>The button has an id of "#dblclick-chain-btn" and the blue square is a div with an id of #dblclick-chain-changling. Here is the jQuery code used to make it slide down:</p>
+        </div>
+        <div class="code-snippet-cell">
+            <figure>
+                <pre>
+                    <code contenteditable spellcheck="false" class="language-css">
+&lt;script&gt;
+$("#dblclick-chain-btn").dblclick(function(){
+    $("#dblclick-chain-changling").css("backgroundColor", "red").slideUp(300).slideDown(300).fadeOut(2000);
+});
+&lt;/script&gt;
+                    </code>
+                </pre>
+            </figure>
+        </div>
+
+    </div>
+</div>
+</div>
+<!-- END EXAMPLE -->
+</div>
+</div>
 
     <!-- END DBLCLICK SECTION -->
 

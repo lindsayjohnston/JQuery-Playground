@@ -3,6 +3,14 @@
 }
 
 /* GENERAL FORMATTING */
+ul{
+    padding: 0;
+    margin: 0;
+}
+li{
+    list-style: none;
+}
+
 header{
     text-align: center;
 }
@@ -95,6 +103,33 @@ figure{
 }
 #animate-height-toggle-changling{
     background-color: blue;
+    height: 60px;
+    width: 60px;
+}
+
+.changling-bar{
+    width: 90px;
+    background-color: coral;
+    text-align: center;
+}
+
+#dblclick-slide-changling, #dblclick-slidetoggle-changling{
+    display: none;
+    text-align: center;
+    width: 90px;
+    background-color: cornflowerblue;
+}
+
+#dblclick-down-right-changling{
+    position: absolute;
+    text-align: center;
+    width: 90px;
+    background-color: cornflowerblue;
+}
+
+#dblclick-chain-changling{
+    position: absolute;
+    background-color: cyan;
     height: 60px;
     width: 60px;
 }
