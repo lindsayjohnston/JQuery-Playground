@@ -12,6 +12,13 @@ pre{
     /* justify-content: center; */
     margin: 0;
     width: 500px;
+    overflow: auto;
+}
+
+pre > code{  /*Targets direct code children of pre, nothing else*/
+    display: block;
+    padding: 1rem;
+    word-wrap: normal;
 }
 code{
     width: 500px;
@@ -80,9 +87,14 @@ figure{
     width: 60px;
 }
 
-#animate-changling{
+#animate-position-changling{
     background-color:orange;
     position: absolute;
+    height: 60px;
+    width: 60px;
+}
+#animate-height-toggle-changling{
+    background-color: blue;
     height: 60px;
     width: 60px;
 }

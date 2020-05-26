@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="prism.css">
     <title>jQuery Playground</title>
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
         $(document).ready(function(){
@@ -20,9 +22,16 @@
             $(".fade-in-btn").click(function(){
                 $("#fade-in-changling").fadeIn();
             });
-            $("#animate-btn").mouseenter(function(){
-                $("#animate-changling").animate({left: '30px'});
-            })
+            $("#animate-position-btn").mouseenter(function(){
+                $("#animate-position-changling").animate({left: '90px'});
+            });
+
+            $("#animate-height-toggle-btn").mouseenter(function(){
+                $("#animate-height-toggle-changling").animate({height:'toggle'});
+            });
+            $("#animate-font-size-btn").mouseenter(function(){
+                $("#animate-font-size-changling").animate({fontSize: '3em'}, "slow");
+            });
         });
     </script>
     
@@ -31,6 +40,7 @@
 
 
 <body>
+    <script src="prism.js"></script>
     <div id="nav-div">
         <nav>
             <ul>
@@ -38,7 +48,7 @@
                     <a href="#click-section">Click Function</a>
                 </li>
                 <li>
-                    <a href="#hover-section">Other Section</a>
+                    <a href="#mouseenter-section">Mouseenter</a>
                 </li>
                 <li>
                     <a href="#">Other Section</a>
@@ -74,7 +84,7 @@
                     <div class="code-snippet-cell">
                         <figure>
                             <pre>
-                                <code contenteditable spellcheck="false">
+                                <code contenteditable spellcheck="false" class="language-css" class="language-css">
 &lt;script&gt;
     $(document).ready(function(){
         $("#hide-btn").click(function(){
@@ -103,7 +113,7 @@
                     <div class="code-snippet-cell">
                         <figure>
                             <pre>
-                                <code contenteditable spellcheck="false">
+                                <code contenteditable spellcheck="false" class="language-css">
 &lt;script&gt;
     $(document).ready(function(){
         $("#show-btn").click(function(){
@@ -132,7 +142,7 @@
             <div class="code-snippet-cell">
                 <figure>
                     <pre>
-                        <code contenteditable spellcheck="false">
+                        <code contenteditable spellcheck="false" class="language-css">
 &lt;script&gt;
     $(document).ready(function(){
         $(".reset-btn").click(function(){
@@ -161,7 +171,7 @@
             <div class="code-snippet-cell">
                 <figure>
                     <pre>
-                        <code contenteditable spellcheck="false">
+                        <code contenteditable spellcheck="false" class="language-css">
 &lt;script&gt;
     $(document).ready(function(){
         $(".reset-btn").click(function(){
@@ -181,30 +191,30 @@
     </div> <!--END CLICK SECTION-->
 
     <!-- HOVER SECTION -->
-    <div id="hover-section" class="bigsection">
+    <div id="mouseenter-section" class="bigsection">
         <header class="section-header">
-            <h2>Hover Function</h2>
+            <h2>mouseenter() Method</h2>
             <button class="reset-btn">Reset</button>
         </header>
         <div class="examples">
-        <!-- HOVER AND ANIMATE --------------------------------------------->
+        <!-- HOVER AND ANIMATE POSITION-------------------------------------->
                 <div class="example">
                     <div class="changling-cell">
-                        <div class="changling" id="animate-changling"></div>
+                        <div class="changling" id="animate-position-changling"></div>
                     </div>
                     <div class="button-cell">
-                        <button id="animate-btn"> Hover over this button to animate the box!</button>
+                        <button id="animate-position-btn"> Hover over this button to animate the box!</button>
                     </div>
                     <div class="description-cell">
-                        <p>The button has an id of "animate-btn" and the pink box is a div with an id of #aniimate-changling. Here is the jQuery code used to animate it:</p>
+                        <p>The button has an id of "animate-position-btn" and the pink box is a div with an id of #aniimate-position-changling. Here is the jQuery code used to animate it:</p>
                     </div>
                     <div class="code-snippet-cell">
                         <figure>
                             <pre>
-                                <code contenteditable spellcheck="false">
+                                <code contenteditable spellcheck="false" class="language-css">
 &lt;script&gt;
     $(document).ready(function(){
-        $("#hide-btn").click(function(){
+        $("#animate-position-btn").click(function(){
             $("#hide-changling").hide();
         });
     });
@@ -215,8 +225,78 @@
                     </div>
 
                 </div>
+        <!-- HOVER AND ANIMATE TOGGLE---------------------------------------->
+        <div class="example">
+            <div class="changling-cell">
+                <div class="changling" id="animate-height-toggle-changling"></div>
+            </div>
+            <div class="button-cell">
+                <button id="animate-height-toggle-btn"> Hover over this button to animate the box!</button>
+            </div>
+            <div class="description-cell">
+                <p>The button has an id of #animate-height-toggle-btn and the blue box is a div with an id of #animate-height-toggle-changling. Here is the jQuery code used to animate it:</p>
+            </div>
+            <div class="code-snippet-cell">
+                <figure>
+                    <pre>
+                        <code contenteditable spellcheck="false" class="language-css">
+&lt;script&gt;
+$(document).ready(function(){
+     $("#animate-height-toggle-btn").mouseenter(function(){
+         $("#animate-height-toggle-changling").animate({height:'toggle'});
+     });
+});
+&lt;/script&gt;
+                        </code>
+                    </pre>
+                </figure>
+            </div>
+
+        </div>
+        </div>
+        <!-- HOVER AND ANIMATE FONT SIZE---------------------------------------->
+        <div class="example">
+            <div class="changling-cell">
+                <div class="changling" id="animate-font-size-changling">Grow!</div>
+            </div>
+            <div class="button-cell">
+                <button id="animate-font-size-btn"> Hover over this button to animate the font size!</button>
+            </div>
+            <div class="description-cell">
+                <p>The button has an id of #animate-font-size-btn and the word "Grow!" is in a div with an id of #animate-font-size-changling. Here is the jQuery code used to animate it:</p>
+            </div>
+            <div class="code-snippet-cell">
+                <figure>
+                    <pre>
+                        <code contenteditable spellcheck="false" class="language-css">
+&lt;script&gt;
+$(document).ready(function(){
+    $("#animate-font-size-btn").mouseenter(function(){
+        $("#animate-font-size-changling").animate({fontSize: '3em'}, "slow");
+    });
+});
+&lt;/script&gt;
+                        </code>
+                    </pre>
+                </figure>
+            </div>
+
+        </div>
         </div>
     </div> <!--END HOVER SECTION-->
+
+    <!-- DBLCLICK SECTION -->
+    <div id="dbl-click-section" class="bigsection">
+        <header class="section-header">
+            <h2>dblclick() Method</h2>
+            <button class="reset-btn">Reset</button>
+        </header>
+        <div class="examples">
+            <!-- DBLCLICK AND SLIDE-->
+        </div>
+    </div>
+
+    <!-- END DBLCLICK SECTION -->
 
     
     
