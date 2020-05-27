@@ -39,8 +39,8 @@
                 $("#dblclick-slidetoggle-changling").slideToggle();
             });
             $("#dblclick-down-right-btn").dblclick(function(){
-                $("#dblclick-down-right-changling").animate({right:"300px"})
-                $("#dblclick-down-right-changling").animate({left: "20px"});
+                $("#dblclick-down-right-changling").animate({right:"1px"})
+                $("#dblclick-down-right-changling").animate({left: "1px"});
             })
             $("#dblclick-chain-btn").dblclick(function(){
                 $("#dblclick-chain-changling").css("backgroundColor", "red").slideUp(300).slideDown(300).fadeOut(2000);
@@ -54,9 +54,13 @@
 
 <body>
     <script src="prism.js"></script>
+    <!-- NAV SECTION -->
     <div id="nav-div">
         <nav>
             <ul>
+                <li>
+                    <a href="#">Top</a>
+                </li>
                 <li>
                     <a href="#click-section">click Method</a>
                 </li>
@@ -69,17 +73,20 @@
             </ul>
         </nav>
     </div>
+    <!-- MAIN HEADER SECTION -->
     <div id="header-div">
         <header>
-            <h1>jQuery Playground</h1>
+            <h1 id="main-header">jQuery Playground</h1>
         </header>
     </div>
-    <!-- CLICK FUNCTION -->
+    <hr>
+    <!-- CLICK SECTION -->
     <div id="click-section" class="big-section">
             <header class="section-header">
-                <h2>Click Function</h2>
+                <h2>click Method</h2>
                 <button class="reset-btn">Reset</button>
             </header>
+            <hr class="subsection-hr">
 
             <div class="examples">
 
@@ -203,12 +210,14 @@
             
     </div> <!--END CLICK SECTION-->
 
-    <!-- HOVER SECTION -->
+    <!-- MOUSEENTER SECTION -->
     <div id="mouseenter-section" class="bigsection">
+        <hr>
         <header class="section-header">
             <h2>mouseenter() Method</h2>
             <button class="reset-btn">Reset</button>
         </header>
+        <hr class="subsection-hr">
         <div class="examples">
         <!-- HOVER AND ANIMATE POSITION-------------------------------------->
                 <div class="example">
@@ -295,27 +304,33 @@ $(document).ready(function(){
             </div>
 
         </div>
-        </div>
-    </div> <!--END HOVER SECTION-->
+    </div>
+    
+     <!--END MOUSEENTER SECTION-->
 
     <!-- DBLCLICK SECTION -->
     <div id="dblclick-section" class="bigsection">
+        <hr>
         <header class="section-header">
             <h2>dblclick() Method</h2>
             <button class="reset-btn">Reset</button>
         </header>
+        <hr class="subsection-hr">
         <div class="examples">
             <!-- DBLCLICK AND SLIDE-->
             <div class="example">
                 <div class="changling-cell">
-                    <div class="changling changling-bar">This Could Be a Menu</div>
-                    <div id="dblclick-slide-changling">
-                        <ul>
-                            <li>Item 1</li>
-                            <li>Item 2</li>
-                            <li>Item 3</li>
-                        </ul>
-                    </div>
+                    <div class="vertical-menu">
+                        <div class="changling changling-bar">This Could Be a Menu</div>
+                        <div id="dblclick-slide-changling">
+                            <ul>
+                                <li>Item 1</li>
+                                <li>Item 2</li>
+                                <li>Item 3</li>
+                            </ul>
+                        </div>
+
+                    </div>  
                 </div>
                 <div class="button-cell">
                     <button id="dblclick-slide-btn"> Double-click this button to see a menu slide into view!</button>
@@ -340,19 +355,20 @@ $(document).ready(function(){
                 </div>
 
             </div>
-        </div>
-    </div>
-    <!-- DBLCLICK AND SLIDETOGGLE-->
-    <div class="example">
+           <!-- DBLCLICK AND SLIDETOGGLE-->
+           <div class="example">
         <div class="changling-cell">
-            <div class="changling changling-bar">Menu</div>
-            <div id="dblclick-slidetoggle-changling">
-                <ul>
-                    <li>Item 1</li>
-                    <li>Item 2</li>
-                    <li>Item 3</li>
-                </ul>
+            <div class="vertical-menu">
+                <div class="changling changling-bar">Menu</div>
+                <div id="dblclick-slidetoggle-changling">
+                    <ul>
+                        <li>Item 1</li>
+                        <li>Item 2</li>
+                        <li>Item 3</li>
+                    </ul>
+                </div>
             </div>
+           
         </div>
         <div class="button-cell">
             <button id="dblclick-slidetoggle-btn"> Double-click this button to slide or hide the menu!</button>
@@ -376,18 +392,22 @@ $(document).ready(function(){
             </figure>
         </div>
 
-    </div>
+           </div>
             <!-- DBLCLICK AND DOUBLE ANIMATE-->
             <div class="example">
                 <div class="changling-cell">
-                    <div class="changling changling-bar">This Could Be a Menu</div>
-                    <div id="dblclick-down-right-changling">
-                        <ul>
-                            <li>Item 1</li>
-                            <li>Item 2</li>
-                            <li>Item 3</li>
-                        </ul>
+                    <div class="vertical-menu">
+                        <div class="changling changling-bar">This Could Be a Menu</div>
+                        <div id="dblclick-down-right-changling">
+                            <ul>
+                                <li>Item 1</li>
+                                <li>Item 2</li>
+                                <li>Item 3</li>
+                            </ul>
+                        </div>
+
                     </div>
+                   
                 </div>
                 <div class="button-cell">
                     <button id="dblclick-down-right-btn"> Double-click this button to see a menu slide down and to the right!</button>
@@ -412,11 +432,8 @@ $(document).ready(function(){
                 </div>
 
             </div>
-        </div>
-    </div>
-    <!-- END EXAMPLE -->
-    <!-- DBLCLICK METHOD CHAINING -->
-    <div class="example">
+            <!-- DBLCLICK METHOD CHAINING -->
+            <div class="example">
         <div class="changling-cell">
             <div class="changling"  id="dblclick-chain-changling"></div>
         </div>
@@ -440,16 +457,10 @@ $("#dblclick-chain-btn").dblclick(function(){
             </figure>
         </div>
 
-    </div>
-</div>
-</div>
-<!-- END EXAMPLE -->
-</div>
-</div>
+            </div>
 
-    <!-- END DBLCLICK SECTION -->
+        </div>
+    </div> <!--END DBLCLICK SECTION-->
 
-    
-    
 </body>
 </html>
