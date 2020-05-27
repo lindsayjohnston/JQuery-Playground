@@ -1,0 +1,8 @@
+<div id="ajax1-div" style="text-align: center; display:flex; flex-direction: column; justify-content: center; align-items: center;">
+    <h2>jQuery and AJAX is FUN!!!</h2>
+    <p id="p1">This is some text in a paragraph.</p>
+</div>
+
+<div id="ajax2-div" >
+    <img style="width: 95%; padding-left: 5%" src="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F6%2F2016%2F10%2Fnick-offerman.jpg&q=85" alt="">
+</div>

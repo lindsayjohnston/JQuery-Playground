@@ -1,53 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="prism.css">
     <title>jQuery Playground</title>
-    
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
-        $(document).ready(function(){
-            $(".reset-btn").click(function(){
+        $(document).ready(function () {
+            $(".reset-btn").click(function () {
                 location.reload();
             });
-            $("#hide-btn").click(function(){
+            $("#hide-btn").click(function () {
                 $("#hide-changling").hide();
             });
-            $("#show-btn").click(function(){
+            $("#show-btn").click(function () {
                 $("#show-changling").removeClass("hidden");
             });
-            $(".fade-in-btn").click(function(){
+            $(".fade-in-btn").click(function () {
                 $("#fade-in-changling").fadeIn();
             });
-            $("#animate-position-btn").mouseenter(function(){
-                $("#animate-position-changling").animate({left: '90px'});
+            $("#animate-position-btn").mouseenter(function () {
+                $("#animate-position-changling").animate({ left: '90px' });
             });
 
-            $("#animate-height-toggle-btn").mouseenter(function(){
-                $("#animate-height-toggle-changling").animate({height:'toggle'});
+            $("#animate-height-toggle-btn").mouseenter(function () {
+                $("#animate-height-toggle-changling").animate({ height: 'toggle' });
             });
-            $("#animate-font-size-btn").mouseenter(function(){
-                $("#animate-font-size-changling").animate({fontSize: '3em'}, "slow");
+            $("#animate-font-size-btn").mouseenter(function () {
+                $("#animate-font-size-changling").animate({ fontSize: '3em' }, "slow");
             });
-            $("#dblclick-slide-btn").dblclick(function(){
+            $("#dblclick-slide-btn").dblclick(function () {
                 $("#dblclick-slide-changling").slideDown("slow");
             });
-            $("#dblclick-slidetoggle-btn").dblclick(function(){
+            $("#dblclick-slidetoggle-btn").dblclick(function () {
                 $("#dblclick-slidetoggle-changling").slideToggle();
             });
-            $("#dblclick-down-right-btn").dblclick(function(){
-                $("#dblclick-down-right-changling").animate({right:"1px"})
-                $("#dblclick-down-right-changling").animate({left: "1px"});
+            $("#dblclick-down-right-btn").dblclick(function () {
+                $("#dblclick-down-right-changling").animate({ right: "1px" })
+                $("#dblclick-down-right-changling").animate({ left: "1px" });
             })
-            $("#dblclick-chain-btn").dblclick(function(){
+            $("#dblclick-chain-btn").dblclick(function () {
                 $("#dblclick-chain-changling").css("backgroundColor", "red").slideUp(300).slideDown(300).fadeOut(2000);
             })
+            $("#click-ajax1-btn").click(function () {
+                $("#ajax1-changling").load("demo_text.txt #ajax1-div");
+
+            });
+            $("#click-ajax2-btn").click(function () {
+                $("#ajax2-changling").load("demo_text.txt #ajax2-div");
+            });
+            $("#filter-input").on("keyup", function(){
+                var value=($(this).val().toLowerCase());
+                $("#filter-changling li").filter(function(){
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value)>-1)
+                });
+            });
+
         });
     </script>
-    
+
 </head>
 
 
@@ -70,6 +86,9 @@
                 <li>
                     <a href="#dblclick-section">dblclick Method</a>
                 </li>
+                <li>
+                    <a href="#ajax-section">AJAX</a>
+                </li>
             </ul>
         </nav>
     </div>
@@ -82,28 +101,29 @@
     <hr>
     <!-- CLICK SECTION -->
     <div id="click-section" class="big-section">
-            <header class="section-header">
-                <h2>click Method</h2>
-                <button class="reset-btn">Reset</button>
-            </header>
-            <hr class="subsection-hr">
+        <header class="section-header">
+            <h2>click Method</h2>
+            <button class="reset-btn">Reset</button>
+        </header>
+        <hr class="subsection-hr">
 
-            <div class="examples">
+        <div class="examples">
 
-         <!-- CLICK AND HIDE START ------------------------------------------>
-                <div class="example">
-                    <div class="changling-cell">
-                        <div class="changling" id="hide-changling"></div>
-                    </div>
-                    <div class="button-cell">
-                        <button id="hide-btn">This button hides the box!</button>
-                    </div>
-                    <div class="description-cell">
-                        <p>The button has an id of "hide-btn" and the pink box is a div with an id of #hide-changling. Here is the jQuery code:</p>
-                    </div>
-                    <div class="code-snippet-cell">
-                        <figure>
-                            <pre>
+            <!-- CLICK AND HIDE START ------------------------------------------>
+            <div class="example">
+                <div class="changling-cell">
+                    <div class="changling" id="hide-changling"></div>
+                </div>
+                <div class="button-cell">
+                    <button id="hide-btn">This button hides the box!</button>
+                </div>
+                <div class="description-cell">
+                    <p>The button has an id of "hide-btn" and the pink box is a div with an id of #hide-changling. Here
+                        is the jQuery code:</p>
+                </div>
+                <div class="code-snippet-cell">
+                    <figure>
+                        <pre>
                                 <code contenteditable spellcheck="false" class="language-css" class="language-css">
 &lt;script&gt;
     $(document).ready(function(){
@@ -114,25 +134,27 @@
 &lt;/script&gt;
                                 </code>
                             </pre>
-                        </figure>
-                    </div>
-
+                    </figure>
                 </div>
 
-        <!-- CLICK AND SHOW START---------------------------------------->    
-                <div class="example">
-                    <div class="changling-cell">
-                        <div class="changling hidden" id="show-changling"></div>
-                    </div>
-                    <div class="button-cell">
-                        <button id="show-btn">This button shows a box!</button>
-                    </div>
-                    <div class="description-cell">
-                        <p>The button has an id of "show-btn" and the green box is a div with an id of #show-changling. The #show-changling div has a class of .hidden{ display: none}. When you click the button, jQuery removes the .hidden class from the div. Here is the jQuery code:</p>
-                    </div>
-                    <div class="code-snippet-cell">
-                        <figure>
-                            <pre>
+            </div>
+
+            <!-- CLICK AND SHOW START---------------------------------------->
+            <div class="example">
+                <div class="changling-cell">
+                    <div class="changling hidden" id="show-changling"></div>
+                </div>
+                <div class="button-cell">
+                    <button id="show-btn">This button shows a box!</button>
+                </div>
+                <div class="description-cell">
+                    <p>The button has an id of "show-btn" and the green box is a div with an id of #show-changling. The
+                        #show-changling div has a class of .hidden{ display: none}. When you click the button, jQuery
+                        removes the .hidden class from the div. Here is the jQuery code:</p>
+                </div>
+                <div class="code-snippet-cell">
+                    <figure>
+                        <pre>
                                 <code contenteditable spellcheck="false" class="language-css">
 &lt;script&gt;
     $(document).ready(function(){
@@ -143,25 +165,26 @@
 &lt;/script&gt;
                                 </code>
                             </pre>
-                        </figure>
-                    </div>
-
+                    </figure>
                 </div>
-        
-        <!-- CLICK AND FADE IN START --------------------------------------->
-                <div class="example">
-            <div class="changling-cell">
-                <div class="changling hidden" id="fade-in-changling"></div>
+
             </div>
-            <div class="button-cell">
-                <button class="fade-in-btn">This button makes a box fade in!</button>
-            </div>
-            <div class="description-cell">
-                <p>The button has an class of "fade-in-btn."  When you click this button, jQuery makes a div with the id of #fade-in-changling fade in. We accomplish this with the following code:</p>
-            </div>
-            <div class="code-snippet-cell">
-                <figure>
-                    <pre>
+
+            <!-- CLICK AND FADE IN START --------------------------------------->
+            <div class="example">
+                <div class="changling-cell">
+                    <div class="changling hidden" id="fade-in-changling"></div>
+                </div>
+                <div class="button-cell">
+                    <button class="fade-in-btn">This button makes a box fade in!</button>
+                </div>
+                <div class="description-cell">
+                    <p>The button has an class of "fade-in-btn." When you click this button, jQuery makes a div with the
+                        id of #fade-in-changling fade in. We accomplish this with the following code:</p>
+                </div>
+                <div class="code-snippet-cell">
+                    <figure>
+                        <pre>
                         <code contenteditable spellcheck="false" class="language-css">
 &lt;script&gt;
     $(document).ready(function(){
@@ -172,25 +195,27 @@
 &lt;/script&gt;
                         </code>
                     </pre>
-                </figure>
-            </div>
-
+                    </figure>
                 </div>
 
-        <!-- CLICK AND RELOAD START ------------------------------------------>
-                <div class="example">
-            <div class="changling-cell">
-                <div class="changling"></div>
             </div>
-            <div class="button-cell">
-                <button class="reset-btn">This button reloads the page!</button>
-            </div>
-            <div class="description-cell">
-                <p>The button has an class of "reset-btn" just like the button at the top of this section that says "Reset." When you click either of these buttons jQuery reloads the page. We accomplish this with the following code:</p>
-            </div>
-            <div class="code-snippet-cell">
-                <figure>
-                    <pre>
+
+            <!-- CLICK AND RELOAD START ------------------------------------------>
+            <div class="example">
+                <div class="changling-cell">
+                    <div class="changling"></div>
+                </div>
+                <div class="button-cell">
+                    <button class="reset-btn">This button reloads the page!</button>
+                </div>
+                <div class="description-cell">
+                    <p>The button has an class of "reset-btn" just like the button at the top of this section that says
+                        "Reset." When you click either of these buttons jQuery reloads the page. We accomplish this with
+                        the following code:</p>
+                </div>
+                <div class="code-snippet-cell">
+                    <figure>
+                        <pre>
                         <code contenteditable spellcheck="false" class="language-css">
 &lt;script&gt;
     $(document).ready(function(){
@@ -201,14 +226,15 @@
 &lt;/script&gt;
                         </code>
                     </pre>
-                </figure>
-            </div>
-
+                    </figure>
                 </div>
 
-             </div>
-            
-    </div> <!--END CLICK SECTION-->
+            </div>
+
+        </div>
+
+    </div>
+    <!--END CLICK SECTION-->
 
     <!-- MOUSEENTER SECTION -->
     <div id="mouseenter-section" class="bigsection">
@@ -219,20 +245,21 @@
         </header>
         <hr class="subsection-hr">
         <div class="examples">
-        <!-- HOVER AND ANIMATE POSITION-------------------------------------->
-                <div class="example">
-                    <div class="changling-cell">
-                        <div class="changling" id="animate-position-changling"></div>
-                    </div>
-                    <div class="button-cell">
-                        <button id="animate-position-btn"> Hover over this button to animate the box!</button>
-                    </div>
-                    <div class="description-cell">
-                        <p>The button has an id of "animate-position-btn" and the pink box is a div with an id of #aniimate-position-changling. Here is the jQuery code used to animate it:</p>
-                    </div>
-                    <div class="code-snippet-cell">
-                        <figure>
-                            <pre>
+            <!-- HOVER AND ANIMATE POSITION-------------------------------------->
+            <div class="example">
+                <div class="changling-cell">
+                    <div class="changling" id="animate-position-changling"></div>
+                </div>
+                <div class="button-cell">
+                    <button id="animate-position-btn"> Hover over this button to animate the box!</button>
+                </div>
+                <div class="description-cell">
+                    <p>The button has an id of "animate-position-btn" and the pink box is a div with an id of
+                        #aniimate-position-changling. Here is the jQuery code used to animate it:</p>
+                </div>
+                <div class="code-snippet-cell">
+                    <figure>
+                        <pre>
                                 <code contenteditable spellcheck="false" class="language-css">
 &lt;script&gt;
     $(document).ready(function(){
@@ -243,24 +270,25 @@
 &lt;/script&gt;
                                 </code>
                             </pre>
-                        </figure>
-                    </div>
-
+                    </figure>
                 </div>
-        <!-- HOVER AND ANIMATE TOGGLE---------------------------------------->
-        <div class="example">
-            <div class="changling-cell">
-                <div class="changling" id="animate-height-toggle-changling"></div>
+
             </div>
-            <div class="button-cell">
-                <button id="animate-height-toggle-btn"> Hover over this button to animate the box!</button>
-            </div>
-            <div class="description-cell">
-                <p>The button has an id of #animate-height-toggle-btn and the blue box is a div with an id of #animate-height-toggle-changling. Here is the jQuery code used to animate it:</p>
-            </div>
-            <div class="code-snippet-cell">
-                <figure>
-                    <pre>
+            <!-- HOVER AND ANIMATE TOGGLE---------------------------------------->
+            <div class="example">
+                <div class="changling-cell">
+                    <div class="changling" id="animate-height-toggle-changling"></div>
+                </div>
+                <div class="button-cell">
+                    <button id="animate-height-toggle-btn"> Hover over this button to animate the box!</button>
+                </div>
+                <div class="description-cell">
+                    <p>The button has an id of #animate-height-toggle-btn and the blue box is a div with an id of
+                        #animate-height-toggle-changling. Here is the jQuery code used to animate it:</p>
+                </div>
+                <div class="code-snippet-cell">
+                    <figure>
+                        <pre>
                         <code contenteditable spellcheck="false" class="language-css">
 &lt;script&gt;
 $(document).ready(function(){
@@ -271,10 +299,10 @@ $(document).ready(function(){
 &lt;/script&gt;
                         </code>
                     </pre>
-                </figure>
-            </div>
+                    </figure>
+                </div>
 
-        </div>
+            </div>
         </div>
         <!-- HOVER AND ANIMATE FONT SIZE---------------------------------------->
         <div class="example">
@@ -285,7 +313,8 @@ $(document).ready(function(){
                 <button id="animate-font-size-btn"> Hover over this button to animate the font size!</button>
             </div>
             <div class="description-cell">
-                <p>The button has an id of #animate-font-size-btn and the word "Grow!" is in a div with an id of #animate-font-size-changling. Here is the jQuery code used to animate it:</p>
+                <p>The button has an id of #animate-font-size-btn and the word "Grow!" is in a div with an id of
+                    #animate-font-size-changling. Here is the jQuery code used to animate it:</p>
             </div>
             <div class="code-snippet-cell">
                 <figure>
@@ -305,8 +334,7 @@ $(document).ready(function(){
 
         </div>
     </div>
-    
-     <!--END MOUSEENTER SECTION-->
+    <!--END MOUSEENTER SECTION-->
 
     <!-- DBLCLICK SECTION -->
     <div id="dblclick-section" class="bigsection">
@@ -330,13 +358,14 @@ $(document).ready(function(){
                             </ul>
                         </div>
 
-                    </div>  
+                    </div>
                 </div>
                 <div class="button-cell">
                     <button id="dblclick-slide-btn"> Double-click this button to see a menu slide into view!</button>
                 </div>
                 <div class="description-cell">
-                    <p>The button has an id of "#dblclick-slide-btn" and the list if items is in a div with an id of #dblclick-slide-changling. Here is the jQuery code used to make it slide down:</p>
+                    <p>The button has an id of "#dblclick-slide-btn" and the list if items is in a div with an id of
+                        #dblclick-slide-changling. Here is the jQuery code used to make it slide down:</p>
                 </div>
                 <div class="code-snippet-cell">
                     <figure>
@@ -355,30 +384,32 @@ $(document).ready(function(){
                 </div>
 
             </div>
-           <!-- DBLCLICK AND SLIDETOGGLE-->
-           <div class="example">
-        <div class="changling-cell">
-            <div class="vertical-menu">
-                <div class="changling changling-bar">Menu</div>
-                <div id="dblclick-slidetoggle-changling">
-                    <ul>
-                        <li>Item 1</li>
-                        <li>Item 2</li>
-                        <li>Item 3</li>
-                    </ul>
+            <!-- DBLCLICK AND SLIDETOGGLE-->
+            <div class="example">
+                <div class="changling-cell">
+                    <div class="vertical-menu">
+                        <div class="changling changling-bar">Menu</div>
+                        <div id="dblclick-slidetoggle-changling">
+                            <ul>
+                                <li>Item 1</li>
+                                <li>Item 2</li>
+                                <li>Item 3</li>
+                            </ul>
+                        </div>
+                    </div>
+
                 </div>
-            </div>
-           
-        </div>
-        <div class="button-cell">
-            <button id="dblclick-slidetoggle-btn"> Double-click this button to slide or hide the menu!</button>
-        </div>
-        <div class="description-cell">
-            <p>The button has an id of "#dblclick-slidetoggle-btn" and the list if items is in a div with an id of #dblclick-slidetoggle-changling. Here is the jQuery code used to make it slide down and up:</p>
-        </div>
-        <div class="code-snippet-cell">
-            <figure>
-                <pre>
+                <div class="button-cell">
+                    <button id="dblclick-slidetoggle-btn"> Double-click this button to slide or hide the menu!</button>
+                </div>
+                <div class="description-cell">
+                    <p>The button has an id of "#dblclick-slidetoggle-btn" and the list if items is in a div with an id
+                        of #dblclick-slidetoggle-changling. Here is the jQuery code used to make it slide down and up:
+                    </p>
+                </div>
+                <div class="code-snippet-cell">
+                    <figure>
+                        <pre>
                     <code contenteditable spellcheck="false" class="language-css">
 &lt;script&gt;
    $(document).ready(function(){
@@ -389,10 +420,10 @@ $(document).ready(function(){
 &lt;/script&gt;
                     </code>
                 </pre>
-            </figure>
-        </div>
+                    </figure>
+                </div>
 
-           </div>
+            </div>
             <!-- DBLCLICK AND DOUBLE ANIMATE-->
             <div class="example">
                 <div class="changling-cell">
@@ -407,13 +438,15 @@ $(document).ready(function(){
                         </div>
 
                     </div>
-                   
+
                 </div>
                 <div class="button-cell">
-                    <button id="dblclick-down-right-btn"> Double-click this button to see a menu slide down and to the right!</button>
+                    <button id="dblclick-down-right-btn"> Double-click this button to see a menu slide down and to the
+                        right!</button>
                 </div>
                 <div class="description-cell">
-                    <p>The button has an id of "#dblclick-slide-btn" and the list if items is in a div with an id of #dblclick-slide-changling. Here is the jQuery code used to make it slide down:</p>
+                    <p>The button has an id of "#dblclick-slide-btn" and the list if items is in a div with an id of
+                        #dblclick-slide-changling. Here is the jQuery code used to make it slide down:</p>
                 </div>
                 <div class="code-snippet-cell">
                     <figure>
@@ -434,18 +467,20 @@ $(document).ready(function(){
             </div>
             <!-- DBLCLICK METHOD CHAINING -->
             <div class="example">
-        <div class="changling-cell">
-            <div class="changling"  id="dblclick-chain-changling"></div>
-        </div>
-        <div class="button-cell">
-            <button id="dblclick-chain-btn"> Double-click this button to see multiple things happen to the square!</button>
-        </div>
-        <div class="description-cell">
-            <p>The button has an id of "#dblclick-chain-btn" and the blue square is a div with an id of #dblclick-chain-changling. Here is the jQuery code used to make it slide down:</p>
-        </div>
-        <div class="code-snippet-cell">
-            <figure>
-                <pre>
+                <div class="changling-cell">
+                    <div class="changling" id="dblclick-chain-changling"></div>
+                </div>
+                <div class="button-cell">
+                    <button id="dblclick-chain-btn"> Double-click this button to see multiple things happen to the
+                        square!</button>
+                </div>
+                <div class="description-cell">
+                    <p>The button has an id of "#dblclick-chain-btn" and the blue square is a div with an id of
+                        #dblclick-chain-changling. Here is the jQuery code used to make it slide down:</p>
+                </div>
+                <div class="code-snippet-cell">
+                    <figure>
+                        <pre>
                     <code contenteditable spellcheck="false" class="language-css">
 &lt;script&gt;
 $("#dblclick-chain-btn").dblclick(function(){
@@ -454,13 +489,120 @@ $("#dblclick-chain-btn").dblclick(function(){
 &lt;/script&gt;
                     </code>
                 </pre>
-            </figure>
-        </div>
+                    </figure>
+                </div>
 
             </div>
 
         </div>
-    </div> <!--END DBLCLICK SECTION-->
+    </div>
+    <!--END DBLCLICK SECTION-->
+
+    <!--jQUERY AJAX-->
+    <div id="ajax-section" class="bigsection">
+        <hr>
+        <header class="section-header">
+            <h2>AJAX</h2>
+            <button class="reset-btn">Reset</button>
+        </header>
+        <hr class="subsection-hr">
+
+        <div class="examples">
+            <!-- FIRST EXAMPLE -------------->
+            <div class="example">
+                <div class="changling-cell" id="ajax1-changling"></div>
+                <div class="button-cell">
+                    <button id="click-ajax1-btn"> Click this button to see what AJAX does!</button>
+                </div>
+                <div class="description-cell">
+                    <p>The button has an id of "#click-ajax1-btn". Using AJAX, we can load external data into the div
+                        with the id of "ajax1-changling". Here is the jQuery code used to make it happen:</p>
+                </div>
+                <div class="code-snippet-cell">
+                    <figure>
+                        <pre>
+                            <code contenteditable spellcheck="false" class="language-css">
+&lt;script&gt;
+$("#click-ajax1-btn").click(function(){
+    $("#ajax1-changling").load("demo_text.txt");
+});
+&lt;/script&gt;
+                            </code>
+                        </pre>
+                    </figure>
+                </div>
+
+            </div>
+            <!-- FIRST EXAMPLE END----------- -->
+            <!-- SECOND EXAMPLE -------------->
+            <div class="example">
+                <div class="changling-cell" id="ajax2-changling"></div>
+                <div class="button-cell">
+                    <button id="click-ajax2-btn"> Click this button to see what AJAX does!</button>
+                </div>
+                <div class="description-cell">
+                    <p>The button has an id of "#click-ajax1-btn". Using AJAX, we can load external data into the div
+                        with the id of "ajax1-changling". Here is the jQuery code used to make it happen:</p>
+                </div>
+                <div class="code-snippet-cell">
+                    <figure>
+                        <pre>
+                            <code contenteditable spellcheck="false" class="language-css">
+&lt;script&gt;
+    $("#click-ajax2-btn").click(function(){
+        $("#ajax2-changling").load("demo_text.txt #ajax2-div");
+    });
+&lt;/script&gt;
+                                        </code>
+                                    </pre>
+                    </figure>
+                </div>
+
+            </div>
+            <!-- SECOND EXAMPLE END----------- -->
+            <!-- FILTER EXAMPLE -------------->
+            <div class="example">
+                <div class="changling-cell" id="filter-changling">
+                    <ul>
+                        <li>John Bates</li>
+                        <li>Lady Mary</li>
+                        <li>Isis</li>
+                        <li>Lady Crawley</li>
+                    </ul>
+                </div>
+                <div class="button-cell">
+                    <label for="filter-input">Type something below:</label>
+                    <input type="text" id="filter-input">
+                </div>
+                <div class="description-cell">
+                    <p>The input field has an id of "#filter-input". The list to the left has an id of #filter-changling. Here is the jQuery code used to filter through the text:</p>
+                </div>
+                <div class="code-snippet-cell">
+                    <figure>
+                        <pre>
+                                        <code contenteditable spellcheck="false" class="language-css">
+&lt;script&gt;
+$("#filter-input").on("keyup", function(){
+    var value=($(this).val().toLowerCase());
+    $("#filter-changling li").filter(function(){
+        $(this).toggle($(this).text().toLowerCase().indexOf(value)>-1)
+    });
+});
+&lt;/script&gt;
+                                                    </code>
+                                                </pre>
+                    </figure>
+                </div>
+
+            </div>
+            <!-- FILTER EXAMPLE END----------- -->
+        </div>
+
+
+    </div>
+
+
 
 </body>
+
 </html>
