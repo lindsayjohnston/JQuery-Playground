@@ -6,10 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="prism.css">
-    <title>jQuery Playground</title>
-
+    <script src="https://kit.fontawesome.com/de845b3cd6.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   
     <script>
         $(document).ready(function () {
             $(".reset-btn").click(function () {
@@ -60,6 +59,12 @@
                     $(this).toggle($(this).text().toLowerCase().indexOf(value)>-1)
                 });
             });
+            $("#menu-bars").click(function(){
+                $("#mobile-menu-ul").slideToggle();
+            })
+            $("#mobile-menu-ul").click(function(){
+                $("#mobile-menu-ul").slideUp();
+            })
 
         });
     </script>
@@ -70,6 +75,35 @@
 
 <body>
     <script src="prism.js"></script>
+    <div class="mobile-nav-div">
+        <nav id="mobile-nav">
+            <div class="mobile-menu-bar">
+                <i class="fas fa-bars" id="menu-bars">
+                </i>
+            </div>
+            
+            <ul  id="mobile-menu-ul" class="hidden">
+                <li>
+                    <a href="#">Top</a>
+                </li>
+                <li>
+                    <a href="#click-section">click Method</a>
+                </li>
+                <li>
+                    <a href="#mouseenter-section">mouseenter Method</a>
+                </li>
+                <li>
+                    <a href="#dblclick-section">dblclick Method</a>
+                </li>
+                <li>
+                    <a href="#advanced-section">Advanced</a>
+                </li>
+                
+            </ul>
+    
+
+        </nav>
+    </div>
     <!-- NAV SECTION -->
     <div id="nav-div">
         <nav>
@@ -87,12 +121,15 @@
                     <a href="#dblclick-section">dblclick Method</a>
                 </li>
                 <li>
-                    <a href="#ajax-section">AJAX</a>
+                    <a href="#advanced-section">Advanced</a>
                 </li>
             </ul>
         </nav>
     </div>
+
+    <div class="main">
     <!-- MAIN HEADER SECTION -->
+    
     <div id="header-div">
         <header>
             <h1 id="main-header">jQuery Playground</h1>
@@ -347,18 +384,22 @@ $(document).ready(function(){
         <div class="examples">
             <!-- DBLCLICK AND SLIDE-->
             <div class="example">
-                <div class="changling-cell">
-                    <div class="vertical-menu">
-                        <div class="changling changling-bar">This Could Be a Menu</div>
-                        <div id="dblclick-slide-changling">
-                            <ul>
-                                <li>Item 1</li>
-                                <li>Item 2</li>
-                                <li>Item 3</li>
-                            </ul>
+                <div class="changling-cell" id="menu-example1">
+                    <div class="vertical-menu-container">
+                        <div class="vertical-menu">
+                            <div class="changling changling-bar">This Could Be a Menu</div>
+                            <div id="dblclick-slide-changling">
+                                <ul>
+                                    <li>Item 1</li>
+                                    <li>Item 2</li>
+                                    <li>Item 3</li>
+                                </ul>
+                            </div>
+    
                         </div>
 
                     </div>
+                    
                 </div>
                 <div class="button-cell">
                     <button id="dblclick-slide-btn"> Double-click this button to see a menu slide into view!</button>
@@ -387,6 +428,7 @@ $(document).ready(function(){
             <!-- DBLCLICK AND SLIDETOGGLE-->
             <div class="example">
                 <div class="changling-cell">
+                   <div class="vertical-menu-container"> 
                     <div class="vertical-menu">
                         <div class="changling changling-bar">Menu</div>
                         <div id="dblclick-slidetoggle-changling">
@@ -397,7 +439,7 @@ $(document).ready(function(){
                             </ul>
                         </div>
                     </div>
-
+                </div>
                 </div>
                 <div class="button-cell">
                     <button id="dblclick-slidetoggle-btn"> Double-click this button to slide or hide the menu!</button>
@@ -499,7 +541,7 @@ $("#dblclick-chain-btn").dblclick(function(){
     <!--END DBLCLICK SECTION-->
 
     <!--jQUERY AJAX-->
-    <div id="ajax-section" class="bigsection">
+    <div id="advanced-section" class="bigsection">
         <hr>
         <header class="section-header">
             <h2>AJAX</h2>
@@ -602,7 +644,7 @@ $("#filter-input").on("keyup", function(){
     </div>
 
 
-
+</div>
 </body>
 
 </html>

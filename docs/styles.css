@@ -5,24 +5,30 @@
 }
 :root{
     --primary-heavy: hotpink;
-    --primary-light: lightpink;
+    --primary-light: rgb(254, 172, 213);
     --secondary-dark: rgb(66, 60, 60);
     --secondary--light: white;
 }
 
 /* GENERAL FORMATTING */
+
 body{
     font-family: 'Montserrat', sans-serif;
     background-color: var(--primary-heavy);
     border-style: solid;
     border-color: var(--secondary--light);
     padding: 20px;
+    color: var(--secondary-dark);
+    min-width: 450px;
 }
 button{
     font-size: 1rem;
     padding: 5px 10px;
     border-radius: 5px;
     margin: 5px;
+}
+.mobile-nav-div{
+    display: none;
 }
 
 #nav-div{
@@ -32,6 +38,7 @@ button{
     background-color: var(--secondary-dark);
     padding: 10px 20px;
     width: 100%;
+    z-index: 11;
 }
 
  nav ul{
@@ -80,7 +87,7 @@ pre{
 
 pre > code{  /*Targets direct code children of pre, nothing else*/
     display: block;
-    padding: 1rem;
+    /* padding: 1rem; */
     word-wrap: normal;
 }
 code{
@@ -114,8 +121,8 @@ header{
 }
 
 .changling-cell{
-    height: 200px;
-    width: 33%;
+    height: 250px;
+    width: 30%;
     background-color: var(--primary-light);
     border-style: solid;
     border-color: var(--secondary--light);
@@ -124,12 +131,15 @@ header{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
+    
 }
+
 
 .button-cell{
     background-color: var(--primary-light);
     width: 30%;
-    height: 200px;
+    height: 250px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -140,17 +150,30 @@ header{
 }
 
 .description-cell{
+    height: 250px;
     width: 30%;
-    height: 200px;
+    min-width: 200px;
     background-color: var(--primary-light);
     border-style: solid;
     border-color: var(--secondary--light);
-    margin: 5px;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* overflow: scroll; */
 }
 
-.description-cell p{
-    margin: 10px;
-}
+/* .description-cell p{
+    margin: 5px;
+    overflow: auto;
+    height: 180px;
+    width: %;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
+
 
 .code-snippet-cell{
     width: 50%;
@@ -158,6 +181,7 @@ header{
     border-style: solid;
     border-color: var(--secondary--light);
     margin: 5px;
+    padding: 5px 5px;
 }
 
 /* EXAMPLES */
@@ -200,7 +224,17 @@ header{
 
 .vertical-menu{
     position:relative;
+    z-index: 10;
     
+}
+
+.vertical-menu-container{
+    position: absolute;
+    top: 30%;
+}
+
+.vertical-menu-container li{
+    margin: 0;
 }
 
 #dblclick-slide-changling, #dblclick-slidetoggle-changling{
@@ -225,4 +259,115 @@ header{
     height: 60px;
     width: 60px;
 }
+@media screen and (max-width: 780px){
+    .changling-cell{
+        width: 45%;
+    }
+    .button-cell{
+        width: 45%;
+    }
+    .description-cell{
+        width: 50%;
+        height: 100%;
+        text-align: center;
+    }
+    .code-snippet-cell{
+        width: 80%;
+    }
 
+}
+
+@media screen and (max-width: 580px){
+    #nav-div{
+        display: none;
+    }
+    .code-snippet-cell{
+        width: 100%;
+    }
+     .mobile-nav-div{
+         display: inline;
+         position: fixed;
+         top:0;
+         left: 0;
+         z-index: 10;
+     }
+
+    #mobile-nav{
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top:0;
+        left: 0;
+    }
+    
+    .mobile-menu-bar{
+        display: flex;
+        height: 40px;
+        width: 100%;
+        background-color: var(--secondary--light);
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 10;
+       
+    }
+
+    #menu-example
+
+    #menu-bars{
+        margin-left: 10px;
+        margin-top: 10px;
+    }
+
+    .vertical-menu-container{
+        z-index: 9;
+        width: 160px;
+        /* position: relative;
+        top: 10px; */
+    }
+
+    .changling-bar{
+        display: flex;
+        justify-content: center;
+        width: 160px;
+        position: absolute;
+        z-index: 8;
+        
+    }
+
+    #dblclick-slide-changling, #dblclick-slidetoggle-changling{
+        width: 160px;
+        z-index: 7;
+        position: absolute;
+        top: 20px;
+        padding-top: 20px;
+    }
+    #dblclick-slidetoggle-changling{
+        top: 0px;
+    }
+
+
+
+    #mobile-menu-ul{
+        background-color: var(--primary-light);
+        position: fixed;
+        width: 100%;
+        max-height: 150px;
+        top: 40px;
+        text-align: center;
+       
+        z-index: 15;
+
+    }
+
+    #mobile-menu-ul li{
+        border: none;
+    }
+
+    i{
+        padding: 10px;
+    }
+
+    
+
+}
