@@ -39,9 +39,9 @@
             $("#dblclick-slidetoggle-btn").dblclick(function () {
                 $("#dblclick-slidetoggle-changling").slideToggle();
             });
-            $("#dblclick-down-right-btn").dblclick(function () {
-                $("#dblclick-down-right-changling").animate({ right: "1px" })
-                $("#dblclick-down-right-changling").animate({ left: "1px" });
+            $("#dblclick-right-left-btn").dblclick(function () {
+                $("#dblclick-right-left-changling").animate({ right: "1px" })
+                $("#dblclick-right-left-changling").animate({ left: "1px" });
             })
             $("#dblclick-chain-btn").dblclick(function () {
                 $("#dblclick-chain-changling").css("backgroundColor", "red").slideUp(300).slideDown(300).fadeOut(2000);
@@ -471,7 +471,7 @@
                 <div class="changling-cell">
                     <div class="vertical-menu">
                         <div class="changling changling-bar">This Could Be a Menu</div>
-                        <div id="dblclick-down-right-changling">
+                        <div id="dblclick-right-left-changling">
                             <ul>
                                 <li>Item 1</li>
                                 <li>Item 2</li>
@@ -483,12 +483,11 @@
 
                 </div>
                 <div class="button-cell">
-                    <button id="dblclick-down-right-btn"> Double-click this button to see a menu slide down and to the
-                        right!</button>
+                    <button id="dblclick-right-left-btn"> Double-click this button to see a menu slide right and left!</button>
                 </div>
                 <div class="description-cell">
-                    <p>The button has an id of "#dblclick-slide-btn" and the list if items is in a div with an id of
-                        #dblclick-slide-changling. Here is the jQuery code used to make it slide down:</p>
+                    <p>The button has an id of "#dblclick-right-left-btn" and the list if items is in a div with an id of
+                        #dblclick-right-left-changling. Here is the jQuery code used to make it slide down:</p>
                 </div>
                 <div class="code-snippet-cell">
                     <figure>
@@ -496,8 +495,9 @@
                             <code contenteditable spellcheck="false" class="language-js">
 &lt;script&gt;
 $(document).ready(function(){
-    $("#dblclick-slide-btn").dblclick(function(){
-        $("#dblclick-slide-changling").slideDown("slow");
+    $("#dblclick-right-left-btn").dblclick(function () {
+        $("#dblclick-right-left-changling").animate({ right: "1px" })
+        $("#dblclick-right-left-changling").animate({ left: "1px" });
     })
 });
 &lt;/script&gt;
@@ -544,7 +544,7 @@ $(document).ready(function(){
     <div id="advanced-section" class="bigsection">
         <hr>
         <header class="section-header">
-            <h2>AJAX</h2>
+            <h2>Advanced</h2>
             <button class="reset-btn">Reset</button>
         </header>
         <hr class="subsection-hr">
@@ -584,7 +584,7 @@ $(document).ready(function(){
                 </div>
                 <div class="description-cell">
                     <p>The button has an id of "#click-ajax2-btn". Using AJAX, we can load external data into the div
-                        with the id of "ajax2-changling". Here is the jQuery code used to make it happen:</p>
+                        with the id of "#ajax2-changling". Here is the jQuery code used to make it happen:</p>
                 </div>
                 <div class="code-snippet-cell">
                     <figure>
@@ -624,12 +624,12 @@ $(document).ready(function(){
                         <pre>
                                         <code contenteditable spellcheck="false" class="language-js">
 &lt;script&gt;
-$("#filter-input").on("keyup", function(){
-    var value=($(this).val().toLowerCase());
-    $("#filter-changling li").filter(function(){
-        $(this).toggle($(this).text().toLowerCase().indexOf(value)>-1)
+    $("#filter-input").on("keyup", function(){
+        var value=($(this).val().toLowerCase());
+        $("#filter-changling li").filter(function(){
+            $(this).toggle($(this).text().toLowerCase().indexOf(value)>-1)
+        });
     });
-});
 &lt;/script&gt;
                                       </code>
                              </pre>
