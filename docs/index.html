@@ -406,18 +406,18 @@
                 </div>
                 <div class="description-cell">
                     <p>The button has an id of "#dblclick-slide-btn" and the list if items is in a div with an id of
-                        #dblclick-slide-changling. Here is the jQuery code used to make it slide down:</p>
+                        "#dblclick-slide-changling." Here is the jQuery code used to make it slide down:</p>
                 </div>
                 <div class="code-snippet-cell">
                     <figure>
                         <pre>
                             <code contenteditable spellcheck="false" class="language-js">
 &lt;script&gt;
-$(document).ready(function(){
-    $("#dblclick-slide-btn").dblclick(function(){
-        $("#dblclick-slide-changling").slideDown("slow");
-    })
-});
+    $(document).ready(function(){
+        $("#dblclick-slide-btn").dblclick(function(){
+            $("#dblclick-slide-changling").slideDown("slow");
+         })
+    });
 &lt;/script&gt;
                             </code>
                         </pre>
@@ -446,7 +446,7 @@ $(document).ready(function(){
                 </div>
                 <div class="description-cell">
                     <p>The button has an id of "#dblclick-slidetoggle-btn" and the list if items is in a div with an id
-                        of #dblclick-slidetoggle-changling. Here is the jQuery code used to make it slide down and up:
+                        of "#dblclick-slidetoggle-changling." Here is the jQuery code used to make it slide down and up:
                     </p>
                 </div>
                 <div class="code-snippet-cell">
@@ -518,16 +518,16 @@ $(document).ready(function(){
                 </div>
                 <div class="description-cell">
                     <p>The button has an id of "#dblclick-chain-btn" and the blue square is a div with an id of
-                        #dblclick-chain-changling. Here is the jQuery code used to make it slide down:</p>
+                        "#dblclick-chain-changling." Here is the jQuery code used to change it:</p>
                 </div>
                 <div class="code-snippet-cell">
                     <figure>
                         <pre>
                     <code contenteditable spellcheck="false" class="language-js">
 &lt;script&gt;
-$("#dblclick-chain-btn").dblclick(function(){
-    $("#dblclick-chain-changling").css("backgroundColor", "red").slideUp(300).slideDown(300).fadeOut(2000);
-});
+    $("#dblclick-chain-btn").dblclick(function(){
+        $("#dblclick-chain-changling").css("backgroundColor", "red").slideUp(300).slideDown(300).fadeOut(2000);
+    });
 &lt;/script&gt;
                     </code>
                 </pre>
