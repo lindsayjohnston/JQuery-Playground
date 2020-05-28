@@ -87,13 +87,13 @@
                     <a href="#">Top</a>
                 </li>
                 <li>
-                    <a href="#click-section">click Method</a>
+                    <a href="#click-section">click() Method</a>
                 </li>
                 <li>
-                    <a href="#mouseenter-section">mouseenter Method</a>
+                    <a href="#mouseenter-section">mouseenter() Method</a>
                 </li>
                 <li>
-                    <a href="#dblclick-section">dblclick Method</a>
+                    <a href="#dblclick-section">dblclick() Method</a>
                 </li>
                 <li>
                     <a href="#advanced-section">Advanced</a>
@@ -112,13 +112,13 @@
                     <a href="#">Top</a>
                 </li>
                 <li>
-                    <a href="#click-section">click Method</a>
+                    <a href="#click-section">click() Method</a>
                 </li>
                 <li>
-                    <a href="#mouseenter-section">mouseenter Method</a>
+                    <a href="#mouseenter-section">mouseenter() Method</a>
                 </li>
                 <li>
-                    <a href="#dblclick-section">dblclick Method</a>
+                    <a href="#dblclick-section">dblclick() Method</a>
                 </li>
                 <li>
                     <a href="#advanced-section">Advanced</a>
@@ -139,7 +139,7 @@
     <!-- CLICK SECTION -->
     <div id="click-section" class="big-section">
         <header class="section-header">
-            <h2>click Method</h2>
+            <h2>click() Method</h2>
             <button class="reset-btn">Reset</button>
         </header>
         <hr class="subsection-hr">
@@ -328,11 +328,11 @@
                         <pre>
                         <code contenteditable spellcheck="false" class="language-js">
 &lt;script&gt;
-$(document).ready(function(){
-     $("#animate-height-toggle-btn").mouseenter(function(){
-         $("#animate-height-toggle-changling").animate({height:'toggle'});
-     });
-});
+     $(document).ready(function(){
+         $("#animate-height-toggle-btn").mouseenter(function(){
+             $("#animate-height-toggle-changling").animate({height:'toggle'});
+         });
+    });
 &lt;/script&gt;
                         </code>
                     </pre>
@@ -351,18 +351,18 @@ $(document).ready(function(){
             </div>
             <div class="description-cell">
                 <p>The button has an id of "#animate-font-size-btn" and the word "Grow!" is in a div with an id of
-                    #animate-font-size-changling. Here is the jQuery code used to animate it:</p>
+                    "#animate-font-size-changling." Here is the jQuery code used to animate it:</p>
             </div>
             <div class="code-snippet-cell">
                 <figure>
                     <pre>
                         <code contenteditable spellcheck="false" class="language-js">
 &lt;script&gt;
-$(document).ready(function(){
-    $("#animate-font-size-btn").mouseenter(function(){
-        $("#animate-font-size-changling").animate({fontSize: '3em'}, "slow");
+    $(document).ready(function(){
+        $("#animate-font-size-btn").mouseenter(function (){
+            $("#animate-font-size-changling").animate({fontSize: '3em'}, "slow");
+        });
     });
-});
 &lt;/script&gt;
                         </code>
                     </pre>
