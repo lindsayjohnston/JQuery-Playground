@@ -557,17 +557,17 @@ $(document).ready(function(){
                     <button id="click-ajax1-btn"> Click this button to see what AJAX does!</button>
                 </div>
                 <div class="description-cell">
-                    <p>The button has an id of "#click-ajax1-btn". Using AJAX, we can load external data into the div
-                        with the id of "ajax1-changling". Here is the jQuery code used to make it happen:</p>
+                    <p>The button has an id of "#click-ajax1-btn". By linking AJAX in our HTML, we can use the load() method to load external data into the div
+                        with the id of "#ajax1-changling". Here is the jQuery code used to make it happen:</p>
                 </div>
                 <div class="code-snippet-cell">
                     <figure>
                         <pre>
                             <code contenteditable spellcheck="false" class="language-js">
 &lt;script&gt;
-$("#click-ajax1-btn").click(function(){
-    $("#ajax1-changling").load("demo_text.txt");
-});
+    $("#click-ajax1-btn").click(function(){
+        $("#ajax1-changling").load("demo_text.txt");
+    });
 &lt;/script&gt;
                             </code>
                         </pre>
@@ -583,8 +583,8 @@ $("#click-ajax1-btn").click(function(){
                     <button id="click-ajax2-btn"> Click this button to see what AJAX does!</button>
                 </div>
                 <div class="description-cell">
-                    <p>The button has an id of "#click-ajax1-btn". Using AJAX, we can load external data into the div
-                        with the id of "ajax1-changling". Here is the jQuery code used to make it happen:</p>
+                    <p>The button has an id of "#click-ajax2-btn". Using AJAX, we can load external data into the div
+                        with the id of "ajax2-changling". Here is the jQuery code used to make it happen:</p>
                 </div>
                 <div class="code-snippet-cell">
                     <figure>
@@ -617,7 +617,7 @@ $("#click-ajax1-btn").click(function(){
                     <input type="text" id="filter-input">
                 </div>
                 <div class="description-cell">
-                    <p>The input field has an id of "#filter-input". The list to the left has an id of #filter-changling. Here is the jQuery code used to filter through the text:</p>
+                    <p>The input field has an id of "#filter-input". The list to the left has an id of "#filter-changling." Here is the jQuery code used to filter through the text:</p>
                 </div>
                 <div class="code-snippet-cell">
                     <figure>
@@ -631,8 +631,8 @@ $("#filter-input").on("keyup", function(){
     });
 });
 &lt;/script&gt;
-                                                    </code>
-                                                </pre>
+                                      </code>
+                             </pre>
                     </figure>
                 </div>
 
