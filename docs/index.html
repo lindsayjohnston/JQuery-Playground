@@ -24,7 +24,7 @@
                 $("#fade-in-changling").fadeIn();
             });
             $("#animate-position-btn").mouseenter(function () {
-                $("#animate-position-changling").animate({ left: '90px' });
+                $("#animate-position-changling").animate({ left: '200px' });
             });
 
             $("#animate-height-toggle-btn").mouseenter(function () {
@@ -152,16 +152,16 @@
                     <div class="changling" id="hide-changling"></div>
                 </div>
                 <div class="button-cell">
-                    <button id="hide-btn">This button hides the box!</button>
+                    <button id="hide-btn">Click to hide the box!</button>
                 </div>
                 <div class="description-cell">
-                    <p>The button has an id of "hide-btn" and the pink box is a div with an id of #hide-changling. Here
+                    <p>The button has an id of "#hide-btn" and the blue box is a div with an id of "#hide-changling." Here
                         is the jQuery code:</p>
                 </div>
                 <div class="code-snippet-cell">
                     <figure>
                         <pre>
-                                <code contenteditable spellcheck="false" class="language-css" class="language-css">
+                                <code contenteditable spellcheck="false" class="language-js" >
 &lt;script&gt;
     $(document).ready(function(){
         $("#hide-btn").click(function(){
@@ -182,17 +182,17 @@
                     <div class="changling hidden" id="show-changling"></div>
                 </div>
                 <div class="button-cell">
-                    <button id="show-btn">This button shows a box!</button>
+                    <button id="show-btn">Click to show a box!</button>
                 </div>
                 <div class="description-cell">
-                    <p>The button has an id of "show-btn" and the green box is a div with an id of #show-changling. The
-                        #show-changling div has a class of .hidden{ display: none}. When you click the button, jQuery
+                    <p>The button has an id of "#show-btn" and the green box is a div with an id of "#show-changling." The
+                        "#show-changling" div has a class of .hidden{ display: none}. When you click the button, jQuery
                         removes the .hidden class from the div. Here is the jQuery code:</p>
                 </div>
                 <div class="code-snippet-cell">
                     <figure>
                         <pre>
-                                <code contenteditable spellcheck="false" class="language-css">
+                                <code contenteditable spellcheck="false" class="language-js">
 &lt;script&gt;
     $(document).ready(function(){
         $("#show-btn").click(function(){
@@ -213,20 +213,20 @@
                     <div class="changling hidden" id="fade-in-changling"></div>
                 </div>
                 <div class="button-cell">
-                    <button class="fade-in-btn">This button makes a box fade in!</button>
+                    <button class="fade-in-btn">Click to make a box fade in!</button>
                 </div>
                 <div class="description-cell">
-                    <p>The button has an class of "fade-in-btn." When you click this button, jQuery makes a div with the
-                        id of #fade-in-changling fade in. We accomplish this with the following code:</p>
+                    <p>The button has an class of ".fade-in-btn." When you click this button, jQuery makes a div with the
+                        id of "#fade-in-changling" fade in. We accomplish this with the following code:</p>
                 </div>
                 <div class="code-snippet-cell">
                     <figure>
                         <pre>
-                        <code contenteditable spellcheck="false" class="language-css">
+                        <code contenteditable spellcheck="false" class="language-js">
 &lt;script&gt;
     $(document).ready(function(){
-        $(".reset-btn").click(function(){
-            location.reload();
+        $(".fade-in-btn").click(function () {
+            $("#fade-in-changling").fadeIn();
         });
     });
 &lt;/script&gt;
@@ -243,17 +243,17 @@
                     <div class="changling"></div>
                 </div>
                 <div class="button-cell">
-                    <button class="reset-btn">This button reloads the page!</button>
+                    <button class="reset-btn">Click to reload the page!</button>
                 </div>
                 <div class="description-cell">
-                    <p>The button has an class of "reset-btn" just like the button at the top of this section that says
-                        "Reset." When you click either of these buttons jQuery reloads the page. We accomplish this with
+                    <p>The button has an class of ".reset-btn" just like the button at the top of this section that says
+                        "Reset." When you click either of these buttons, jQuery reloads the page. We accomplish this with
                         the following code:</p>
                 </div>
                 <div class="code-snippet-cell">
                     <figure>
                         <pre>
-                        <code contenteditable spellcheck="false" class="language-css">
+                        <code contenteditable spellcheck="false" class="language-js">
 &lt;script&gt;
     $(document).ready(function(){
         $(".reset-btn").click(function(){
@@ -291,17 +291,17 @@
                     <button id="animate-position-btn"> Hover over this button to animate the box!</button>
                 </div>
                 <div class="description-cell">
-                    <p>The button has an id of "animate-position-btn" and the pink box is a div with an id of
-                        #aniimate-position-changling. Here is the jQuery code used to animate it:</p>
+                    <p>The button has an id of "#animate-position-btn" and the yellow box is a div with an id of
+                        "#animate-position-changling." Here is the jQuery code used to move it:</p>
                 </div>
                 <div class="code-snippet-cell">
                     <figure>
                         <pre>
-                                <code contenteditable spellcheck="false" class="language-css">
+                                <code contenteditable spellcheck="false" class="language-js">
 &lt;script&gt;
     $(document).ready(function(){
-        $("#animate-position-btn").click(function(){
-            $("#hide-changling").hide();
+        $("#animate-position-btn").mouseenter(function () {
+            $("#animate-position-changling").animate({ left: '200px' });
         });
     });
 &lt;/script&gt;
@@ -320,13 +320,13 @@
                     <button id="animate-height-toggle-btn"> Hover over this button to animate the box!</button>
                 </div>
                 <div class="description-cell">
-                    <p>The button has an id of #animate-height-toggle-btn and the blue box is a div with an id of
-                        #animate-height-toggle-changling. Here is the jQuery code used to animate it:</p>
+                    <p>The button has an id of "#animate-height-toggle-btn" and the blue box is a div with an id of
+                        "#animate-height-toggle-changling." Here is the jQuery code used to animate it:</p>
                 </div>
                 <div class="code-snippet-cell">
                     <figure>
                         <pre>
-                        <code contenteditable spellcheck="false" class="language-css">
+                        <code contenteditable spellcheck="false" class="language-js">
 &lt;script&gt;
 $(document).ready(function(){
      $("#animate-height-toggle-btn").mouseenter(function(){
@@ -350,13 +350,13 @@ $(document).ready(function(){
                 <button id="animate-font-size-btn"> Hover over this button to animate the font size!</button>
             </div>
             <div class="description-cell">
-                <p>The button has an id of #animate-font-size-btn and the word "Grow!" is in a div with an id of
+                <p>The button has an id of "#animate-font-size-btn" and the word "Grow!" is in a div with an id of
                     #animate-font-size-changling. Here is the jQuery code used to animate it:</p>
             </div>
             <div class="code-snippet-cell">
                 <figure>
                     <pre>
-                        <code contenteditable spellcheck="false" class="language-css">
+                        <code contenteditable spellcheck="false" class="language-js">
 &lt;script&gt;
 $(document).ready(function(){
     $("#animate-font-size-btn").mouseenter(function(){
@@ -411,7 +411,7 @@ $(document).ready(function(){
                 <div class="code-snippet-cell">
                     <figure>
                         <pre>
-                            <code contenteditable spellcheck="false" class="language-css">
+                            <code contenteditable spellcheck="false" class="language-js">
 &lt;script&gt;
 $(document).ready(function(){
     $("#dblclick-slide-btn").dblclick(function(){
@@ -452,7 +452,7 @@ $(document).ready(function(){
                 <div class="code-snippet-cell">
                     <figure>
                         <pre>
-                    <code contenteditable spellcheck="false" class="language-css">
+                    <code contenteditable spellcheck="false" class="language-js">
 &lt;script&gt;
    $(document).ready(function(){
       $("#dblclick-slidetoggle-btn").dblclick(function(){
@@ -493,7 +493,7 @@ $(document).ready(function(){
                 <div class="code-snippet-cell">
                     <figure>
                         <pre>
-                            <code contenteditable spellcheck="false" class="language-css">
+                            <code contenteditable spellcheck="false" class="language-js">
 &lt;script&gt;
 $(document).ready(function(){
     $("#dblclick-slide-btn").dblclick(function(){
@@ -523,7 +523,7 @@ $(document).ready(function(){
                 <div class="code-snippet-cell">
                     <figure>
                         <pre>
-                    <code contenteditable spellcheck="false" class="language-css">
+                    <code contenteditable spellcheck="false" class="language-js">
 &lt;script&gt;
 $("#dblclick-chain-btn").dblclick(function(){
     $("#dblclick-chain-changling").css("backgroundColor", "red").slideUp(300).slideDown(300).fadeOut(2000);
@@ -563,7 +563,7 @@ $("#dblclick-chain-btn").dblclick(function(){
                 <div class="code-snippet-cell">
                     <figure>
                         <pre>
-                            <code contenteditable spellcheck="false" class="language-css">
+                            <code contenteditable spellcheck="false" class="language-js">
 &lt;script&gt;
 $("#click-ajax1-btn").click(function(){
     $("#ajax1-changling").load("demo_text.txt");
@@ -589,7 +589,7 @@ $("#click-ajax1-btn").click(function(){
                 <div class="code-snippet-cell">
                     <figure>
                         <pre>
-                            <code contenteditable spellcheck="false" class="language-css">
+                            <code contenteditable spellcheck="false" class="language-js">
 &lt;script&gt;
     $("#click-ajax2-btn").click(function(){
         $("#ajax2-changling").load("demo_text.txt #ajax2-div");
@@ -622,7 +622,7 @@ $("#click-ajax1-btn").click(function(){
                 <div class="code-snippet-cell">
                     <figure>
                         <pre>
-                                        <code contenteditable spellcheck="false" class="language-css">
+                                        <code contenteditable spellcheck="false" class="language-js">
 &lt;script&gt;
 $("#filter-input").on("keyup", function(){
     var value=($(this).val().toLowerCase());
