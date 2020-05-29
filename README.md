@@ -1,8 +1,17 @@
 # JQuery-Playground
-Examples of the most common uses of JQuery 
+Examples of common uses of JQuery 
 
-Sources:
+## Sources:
 
-For including code snippets on the page: https://prismjs.com/index.html
+To include jQuery in my HTML doc, I used the Google CDN for jQuery: https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js
 
-Icons: <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+I went through most of the examples at https://www.w3schools.com/jquery/ to get the hang of jQuery.
+
+To include code snippets on the page I used Prism: https://prismjs.com/index.html.
+
+For the menu bars on mobile screens I used Font Awesome:https://fontawesome.com/
+
+
+## See the page:
+
+
