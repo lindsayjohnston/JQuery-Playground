@@ -14,4 +14,5 @@ For the menu bars on mobile screens I used Font Awesome:https://fontawesome.com/
 
 ## See the page:
 
+[Click here](https://lindsayjohnston.github.io/JQuery-Playground/)
 
