@@ -405,7 +405,7 @@
                     <button id="dblclick-slide-btn"> Double-click this button to see a menu slide into view!</button>
                 </div>
                 <div class="description-cell">
-                    <p>The button has an id of "#dblclick-slide-btn" and the list if items is in a div with an id of
+                    <p>The button has an id of "#dblclick-slide-btn" and the list of items is in a div with an id of
                         "#dblclick-slide-changling." Here is the jQuery code used to make it slide down:</p>
                 </div>
                 <div class="code-snippet-cell">
@@ -467,7 +467,7 @@
 
             </div>
             <!-- DBLCLICK AND DOUBLE ANIMATE-->
-            <div class="example">
+            <div class="example" id="dblclick-right-left-changling-example">
                 <div class="changling-cell">
                     <div class="vertical-menu-container">
                     <div class="vertical-menu">
@@ -496,12 +496,12 @@
                         <pre>
                             <code contenteditable spellcheck="false" class="language-js">
 &lt;script&gt;
-$(document).ready(function(){
-    $("#dblclick-right-left-btn").dblclick(function () {
-        $("#dblclick-right-left-changling").animate({ right: "1px" })
-        $("#dblclick-right-left-changling").animate({ left: "1px" });
-    })
-});
+    $(document).ready(function(){
+        $("#dblclick-right-left-btn").dblclick(function () {
+            $("#dblclick-right-left-changling").animate({ right: "1px" })
+            $("#dblclick-right-left-changling").animate({ left: "1px" });
+        })
+    });
 &lt;/script&gt;
                             </code>
                         </pre>
